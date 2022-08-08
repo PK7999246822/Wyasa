@@ -43,7 +43,7 @@ const loginUser = async (req, res) => {
     try {
         //Checking if no data is present in our request
         let data = req.body
-        if (Object.keys(data) == 0) {
+        if (Object.keys(data).length === 0) {
             return res.status(400).send({ status: false, message: "Please enter your details to login" })
         }
 
@@ -88,7 +88,7 @@ const Question = async function (req, res) {
     try {
         let data = req.body
         let userId = req.params.userId
-        if (Object.keys(data) == 0) {
+        if (Object.keys(data).length === 0) {
             return res.status(400).send({ status: false, message: "Please enter your details to login" })
         }
 
