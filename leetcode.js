@@ -1,21 +1,21 @@
 
 
-var isValidBST = function(root)
- {
-    function recursiv(root,min,max)
+var isValidBST = function(node)
+{
+    function recursive(node,minimum,maximum)
     {
-        
-        if(root === null)
+
+        if(node === null)
         {
             return true;
         }
-        if((root.val >= max || root.val <= min))
+        if((node.val >= maximum || node.val <= minimum))
         {
             return false;
         }
         
-        return recursiv(root.left,min,root.val) && recursiv(root.right, root.val, max);
+        return recursive(node.left,minimum,node.val) && recursive(node.right, node.val, maximum);
         
     }
-    return recursiv(root,-Infinity, Infinity)
+    return recursive(node,-Infinity, Infinity)
 };
